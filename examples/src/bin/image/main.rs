@@ -66,7 +66,7 @@ fn main() {
 
         let initial_dimensions = {
             // convert to physical pixels
-            let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+            let dimensions: (u32, u32) = window.inner_size().into();
             [dimensions.0, dimensions.1]
         };
 
@@ -162,7 +162,7 @@ fn main() {
         previous_frame_end.as_mut().unwrap().cleanup_finished();
         if recreate_swapchain {
             let dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
 

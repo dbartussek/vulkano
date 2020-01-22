@@ -156,7 +156,7 @@ fn main() {
         // Because for both of these cases, the swapchain needs to be the window dimensions, we just use that.
         let initial_dimensions = {
             // convert to physical pixels
-            let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+            let dimensions: (u32, u32) = window.inner_size().into();
             [dimensions.0, dimensions.1]
         };
 
@@ -326,7 +326,7 @@ void main() {
         if recreate_swapchain {
             // Get the new dimensions of the window.
             let dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
 

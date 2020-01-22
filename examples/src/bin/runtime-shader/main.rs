@@ -81,7 +81,7 @@ fn main() {
     let queue = queues.next().unwrap();
 
     let initial_dimensions = {
-        let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+        let dimensions: (u32, u32) = window.inner_size().into();
         [dimensions.0, dimensions.1]
     };
 
@@ -395,7 +395,7 @@ fn main() {
         if recreate_swapchain {
             // Get the new dimensions for the viewport/framebuffers.
             let dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
 

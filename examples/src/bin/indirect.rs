@@ -91,7 +91,7 @@ fn main() {
         let alpha = caps.supported_composite_alpha.iter().next().unwrap();
         let format = caps.supported_formats[0].0;
         let initial_dimensions = {
-            let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+            let dimensions: (u32, u32) = window.inner_size().into();
             [dimensions.0, dimensions.1]
         };
 
@@ -221,7 +221,7 @@ void main() {
 
         if recreate_swapchain {
             let dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
             let (new_swapchain, new_images) = match swapchain.recreate_with_dimension(dimensions) {

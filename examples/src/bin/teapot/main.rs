@@ -57,7 +57,7 @@ fn main() {
     // unlike the triangle example we need to keep track of the width and height so we can calculate
     // render the teapot with the correct aspect ratio.
     let mut dimensions = {
-        let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+        let dimensions: (u32, u32) = window.inner_size().into();
         [dimensions.0, dimensions.1]
     };
 
@@ -134,7 +134,7 @@ fn main() {
 
         if recreate_swapchain {
             dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
 

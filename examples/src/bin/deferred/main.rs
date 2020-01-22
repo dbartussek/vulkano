@@ -77,7 +77,7 @@ fn main() {
         let format = caps.supported_formats[0].0;
 
         let initial_dimensions = {
-            let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+            let dimensions: (u32, u32) = window.inner_size().into();
             [dimensions.0, dimensions.1]
         };
 
@@ -102,7 +102,7 @@ fn main() {
 
         if recreate_swapchain {
             let dimensions = {
-                let dimensions: (u32, u32) = window.inner_size().to_physical(window.hidpi_factor()).into();
+                let dimensions: (u32, u32) = window.inner_size().into();
                 [dimensions.0, dimensions.1]
             };
 
